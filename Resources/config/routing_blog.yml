@@ -1,0 +1,9 @@
+nfq_cmsblog_list:
+  path: /
+  methods: [ GET ]
+  defaults: { _controller: NfqCmsPageBundle:CmsBlog:index }
+
+nfq_cmsblog_view:
+  path: /{slug}
+  methods: [ GET ]
+  defaults: { _controller: NfqCmsPageBundle:CmsBlog:view }

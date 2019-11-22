@@ -6,3 +6,7 @@ _cms_admin:
 _cms_front:
     resource: '@NfqCmsPageBundle/Resources/config/routing_front.yml'
     prefix: /
+
+_cms_blog:
+    resource: '@NfqCmsPageBundle/Resources/config/routing_blog.yml'
+    prefix: /blog

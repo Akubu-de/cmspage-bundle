@@ -1,0 +1,14 @@
+{% extends 'NfqCmsPageBundle::base.html.twig' %}
+
+{% block cms_content %}
+    <div class="cms-page-container">
+        {% for post in blogPosts %}
+        <a href="{{ post.slug }}">
+        <h1 class="cms-page-title">{{ post.name }}</h1>
+        <div class="cms-page-text">
+            {{ post.text|raw }}
+        </div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}
