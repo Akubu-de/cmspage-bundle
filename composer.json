@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.6",
-        "symfony/symfony": "~2.7|~3.0|~3.3",
+        "symfony/symfony": "~2.7|~3.0|~3.3|~3.4",
         "symfony/monolog-bundle": "~2.4|~3.1",
         "sensio/framework-extra-bundle": "~3.0",
 
@@ -19,7 +19,7 @@
         "doctrine/doctrine-bundle": "~1.5",
 
         "gedmo/doctrine-extensions": "2.4.*",
-        "stfalcon/tinymce-bundle": "~1.1|~2.1",
+        "stfalcon/tinymce-bundle": "*",
 
         "nfq-rho/admin-bundle": "~0.6|~0.7"
     },
