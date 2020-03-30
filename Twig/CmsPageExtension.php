@@ -117,6 +117,12 @@ class CmsPageExtension extends \Twig_Extension
                     'needs_environment' => true,
                     'is_safe' => ['html'],
                 ]
+            ),
+            new \Twig_SimpleFunction('cms_items', [$this, 'getCmsItemsByType'],
+                [
+                    'needs_environment' => true,
+                    'is_safe' => ['html']
+                ]
             )
         ];
     }
@@ -163,6 +169,25 @@ class CmsPageExtension extends \Twig_Extension
         }
 
         return $value;
+    }
+
+    /**
+     * Returns CMS Page entity by its type
+     *
+     * @param \Twig_Environment $environment
+     * @param $type
+     * @return array
+     */
+    public function getCmsItemsByType(\Twig_Environment $environment, $type)
+    {
+        try {
+            $pages = $this->manager->getPagesByType($type);
+        } catch (\Exception $ex) {
+            //Cms page was not found so just return empty string
+            $pages = [];
+        }
+
+        return $pages;
     }
 
     /**
