@@ -99,7 +99,7 @@ class CmsPageType extends TranslatableType
     /**
      * @param OptionsResolverInterface $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function setDefaultOptions(OptionsResolver $resolver)
     {
         parent::setDefaultOptions($resolver);
 
@@ -117,5 +117,10 @@ class CmsPageType extends TranslatableType
     public function getName()
     {
         return 'cmspage';
+    }
+    
+    public function callSetDefaultOptions(OptionsResolver $resolver)
+    {
+
     }
 }

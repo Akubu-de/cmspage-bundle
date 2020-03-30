@@ -19,7 +19,7 @@
         "doctrine/doctrine-bundle": "~1.5",
 
         "gedmo/doctrine-extensions": "2.4.*",
-        "stfalcon/tinymce-bundle": "*",
+        "stfalcon/tinymce-bundle": "~2.5.0",
 
         "nfq-rho/admin-bundle": "~0.6|~0.7"
     },
