@@ -172,6 +172,20 @@ class CmsPage
     protected $countryCode;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $date;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $link;
+
+    /**
      * Get id
      *
      * @return integer
@@ -526,4 +540,37 @@ class CmsPage
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param mixed $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    /**
+     * @param mixed $link
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
+    }
+    
 }
