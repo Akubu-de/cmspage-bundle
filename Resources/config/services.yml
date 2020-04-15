@@ -35,6 +35,7 @@ services:
         arguments: [ '@nfq_cmspage.repository_service', '%locale%' ]
         calls:
             - [setAuthChecker, [ '@security.authorization_checker' ]]
+        public: true
 
     nfq_cmspage.service.place_manager:
         class: Nfq\CmsPageBundle\Service\CmsPlaceManager
