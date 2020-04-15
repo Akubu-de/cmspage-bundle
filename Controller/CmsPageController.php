@@ -14,6 +14,7 @@ namespace Nfq\CmsPageBundle\Controller;
 use Nfq\CmsPageBundle\Entity\CmsPage;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -22,7 +23,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  * Class CmsPageController
  * @package Nfq\CmsPageBundle\Controller
  */
-class CmsPageController extends Controller
+class CmsPageController extends AbstractController
 {
     /**
      * @var string
@@ -89,7 +90,7 @@ class CmsPageController extends Controller
      */
     protected function resolvePageTemplate(CmsPage $entity)
     {
-        $twigTemplateLoader = $this->get('twig.loader');
+        $twigTemplateLoader = $this->get('twig')->getLoader();
 
         $customTemplate = sprintf('NfqCmsPageBundle:CmsPage/_custom:%s.html.twig', $entity->getIdentifier());
         $finalTemplate = $this->defaultTemplate;
