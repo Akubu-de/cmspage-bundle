@@ -7,6 +7,14 @@ parameters:
     nfq_cmspage.cms_manager.class: Nfq\CmsPageBundle\Service\CmsManager
 
 services:
+
+    Nfq\CmsPageBundle\Controller\:
+        resource: '../../Controller'
+        tags: ['controller.service_arguments']
+        autowire: true
+        autoconfigure: true
+        public: false
+
     #Generic services
     nfq_cmspage.generic_search:
         class: Nfq\CmsPageBundle\Service\Admin\Search\CmsSearch
