@@ -24,7 +24,6 @@ services:
 
     #Alias for nfq_cmspage.admin.service.cms_manager
     Nfq\CmsPageBundle\Service\Admin\CmsManager: '@nfq_cmspage.admin.service.cms_manager'
-
     nfq_cmspage.admin.service.cms_manager:
         class: Nfq\CmsPageBundle\Service\Admin\CmsManager
         autowire: true
@@ -46,8 +45,12 @@ services:
             - [setContainer, [ '@service_container' ]]
             - [setConfig, [ '%nfq_cmspage.types%' ]]
 
+    #Alias for nfq_cmspage.cms_manager
+    Nfq\CmsPageBundle\Service\CmsManager: '@nfq_cmspage.cms_manager'
+
     nfq_cmspage.cms_manager:
-        class: '%nfq_cmspage.cms_manager.class%'
+        class: 'Nfq\CmsPageBundle\Service\CmsManager'
+        autowire: true
         arguments: [ '@nfq_cmspage.repository_service', '%locale%' ]
         calls:
             - [setAuthChecker, [ '@security.authorization_checker' ]]

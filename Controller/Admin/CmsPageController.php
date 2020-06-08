@@ -17,7 +17,7 @@ use Nfq\AdminBundle\Controller\Traits\CrudIndexController;
 use Nfq\AdminBundle\Controller\Traits\TranslatableCRUDController;
 use Nfq\CmsPageBundle\Entity\CmsPage;
 use Nfq\CmsPageBundle\Service\CmsTypeManager;
-use Nfq\CmsPageBundle\Service\Admin\CmsManager;
+use Nfq\CmsPageBundle\Service\CmsManager;
 use Nfq\CmsPageBundle\Service\Adapters\CmsPageAdapterInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -34,6 +34,7 @@ class CmsPageController extends Controller
 
     private $admin_service_cms_manager;
     private $cms_type_manager;
+    private $cms_manager;
 
 
     use TranslatableCRUDController {
@@ -53,11 +54,12 @@ class CmsPageController extends Controller
     /**
      * @required
      */
-    public function setDependencies(Paginator $paginator, CmsManager $admin_service_cms_manager, CmsTypeManager $cms_type_manager)
+    public function setDependencies(Paginator $paginator, CmsManager $admin_service_cms_manager, CmsTypeManager $cms_type_manager, CmsManager $cms_manager)
     {
         $this->paginator = $paginator;
         $this->admin_service_cms_manager = $admin_service_cms_manager;
         $this->cms_type_manager = $cms_type_manager;
+        $this->cms_manager = $cms_manager;
     }
 
     /**
@@ -81,7 +83,7 @@ class CmsPageController extends Controller
      */
     private function getTypeManager()
     {
-        return $this->get('nfq_cmspage.cms_type_manager');
+        return $this->cms_type_manager;
     }
 
     /**
@@ -159,7 +161,7 @@ class CmsPageController extends Controller
      */
     protected function redirectToPreview($entity)
     {
-        $params = $this->get('nfq_cmspage.cms_manager')
+        $params = $this->cms_manager
             ->getCmsUrlParams($entity->getIdentifier(), $entity->getLocale());
 
         $params['_locale'] = $entity->getLocale();

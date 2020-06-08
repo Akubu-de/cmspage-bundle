@@ -12,12 +12,11 @@
 namespace Nfq\CmsPageBundle\Controller;
 
 use Nfq\CmsPageBundle\Entity\CmsPage;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Nfq\CmsPageBundle\Service\CmsManager;
 
 /**
  * Class CmsPageController
@@ -25,6 +24,15 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 class CmsPageController extends AbstractController
 {
+
+    private $cms_manager;
+
+    public function __construct(CmsManager $cms_manager)
+    {
+        $this->cms_manager = $cms_manager;
+        dump($this->cms_manager);
+    }
+
     /**
      * @var string
      */
@@ -81,7 +89,7 @@ class CmsPageController extends AbstractController
      */
     protected function getCmsPageManager()
     {
-        return $this->get('nfq_cmspage.cms_manager');
+        return $this->cms_manager;
     }
 
     /**
