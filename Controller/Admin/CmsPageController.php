@@ -22,9 +22,8 @@ use Nfq\CmsPageBundle\Service\Adapters\CmsPageAdapterInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Nfq\AdminBundle\Paginator\Paginator;
 
 /**
  * Class CmsPageController
@@ -32,6 +31,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
  */
 class CmsPageController extends Controller
 {
+
+    private $admin_service_cms_manager;
+
+
     use TranslatableCRUDController {
         newAction as traitNewAction;
         createAction as traitCreateAction;
@@ -45,6 +48,15 @@ class CmsPageController extends Controller
      * @var CmsPageAdapterInterface
      */
     private $adapter;
+
+    /**
+     * @required
+     */
+    public function setDependencies(Paginator $paginator, CmsManager $admin_service_cms_manager)
+    {
+        $this->paginator = $paginator;
+        $this->admin_service_cms_manager = $admin_service_cms_manager;
+    }
 
     /**
      * Lists all entities.
@@ -127,7 +139,7 @@ class CmsPageController extends Controller
      */
     private function getAdminCmsManager()
     {
-        return $this->get('nfq_cmspage.admin.service.cms_manager');
+        return $this->admin_service_cms_manager;
     }
 
     /**
