@@ -24,6 +24,7 @@ services:
 
     #Alias for nfq_cmspage.admin.service.cms_manager
     Nfq\CmsPageBundle\Service\Admin\CmsManager: '@nfq_cmspage.admin.service.cms_manager'
+
     nfq_cmspage.admin.service.cms_manager:
         class: Nfq\CmsPageBundle\Service\Admin\CmsManager
         autowire: true
@@ -35,8 +36,12 @@ services:
         class: Nfq\CmsPageBundle\Service\Admin\CmsUploadManager
         arguments: [ '%nfq_cmspage.config%' ]
 
+    #Alias for nfq_cmspage.cms_type_manager
+    Nfq\CmsPageBundle\Service\CmsTypeManager: '@nfq_cmspage.cms_type_manager'
+
     nfq_cmspage.cms_type_manager:
         class: Nfq\CmsPageBundle\Service\CmsTypeManager
+        autowire: true
         calls:
             - [setContainer, [ '@service_container' ]]
             - [setConfig, [ '%nfq_cmspage.types%' ]]

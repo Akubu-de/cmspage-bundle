@@ -33,6 +33,7 @@ class CmsPageController extends Controller
 {
 
     private $admin_service_cms_manager;
+    private $cms_type_manager;
 
 
     use TranslatableCRUDController {
@@ -52,10 +53,11 @@ class CmsPageController extends Controller
     /**
      * @required
      */
-    public function setDependencies(Paginator $paginator, CmsManager $admin_service_cms_manager)
+    public function setDependencies(Paginator $paginator, CmsManager $admin_service_cms_manager, CmsTypeManager $cms_type_manager)
     {
         $this->paginator = $paginator;
         $this->admin_service_cms_manager = $admin_service_cms_manager;
+        $this->cms_type_manager = $cms_type_manager;
     }
 
     /**
