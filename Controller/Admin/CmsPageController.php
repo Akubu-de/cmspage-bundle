@@ -17,7 +17,7 @@ use Nfq\AdminBundle\Controller\Traits\CrudIndexController;
 use Nfq\AdminBundle\Controller\Traits\TranslatableCRUDController;
 use Nfq\CmsPageBundle\Entity\CmsPage;
 use Nfq\CmsPageBundle\Service\CmsTypeManager;
-use Nfq\CmsPageBundle\Service\CmsManager;
+use Nfq\CmsPageBundle\Service\Admin\CmsManager;
 use Nfq\CmsPageBundle\Service\Adapters\CmsPageAdapterInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;

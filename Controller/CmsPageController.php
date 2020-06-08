@@ -30,7 +30,6 @@ class CmsPageController extends AbstractController
     public function __construct(CmsManager $cms_manager)
     {
         $this->cms_manager = $cms_manager;
-        dump($this->cms_manager);
     }
 
     /**
