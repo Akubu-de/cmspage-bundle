@@ -22,8 +22,11 @@ services:
         tags:
             - { name: nfq_admin.search, manager: nfq_cmspage.admin.service.cms_manager }
 
+    #Alias for nfq_cmspage.admin.service.cms_manager
+    Nfq\CmsPageBundle\Service\Admin\CmsManager: '@nfq_cmspage.admin.service.cms_manager'
     nfq_cmspage.admin.service.cms_manager:
         class: Nfq\CmsPageBundle\Service\Admin\CmsManager
+        autowire: true
         arguments: [ '@nfq_cmspage.repository_service' ]
         tags:
             - { name: nfq_admin.manager }
