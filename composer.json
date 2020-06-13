@@ -6,7 +6,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url":  "git@github.com:nfq-rho/admin-bundle.git"
+            "url":  "https://github.com/G0URAB/admin-bundle"
         }
     ],
     "require": {
