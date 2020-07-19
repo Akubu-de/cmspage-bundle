@@ -24,6 +24,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Nfq\AdminBundle\Paginator\Paginator;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class CmsPageController
@@ -67,15 +68,15 @@ class CmsPageController extends Controller
      *
      * @Template()
      * @param Request $request
-     * @return array
+     * @return Response
      */
     public function indexAction(Request $request)
     {
         $response = $this->traitIndexAction($request);
 
-        return $response + [
-            'contentTypes' => $this->getTypeManager()->getTypes()
-        ];
+        return $this->render('@NfqCmsPage/Admin/CmsPage/index.html.twig',$response + [
+                'contentTypes' => $this->getTypeManager()->getTypes()
+            ]);
     }
 
     /**
