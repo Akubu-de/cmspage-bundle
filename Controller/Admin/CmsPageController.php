@@ -25,6 +25,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Nfq\AdminBundle\Paginator\Paginator;
 use Symfony\Component\HttpFoundation\Response;
+use Nfq\CmsPageBundle\Service\CmsPlaceManager;
 
 /**
  * Class CmsPageController
@@ -52,15 +53,23 @@ class CmsPageController extends Controller
      */
     private $adapter;
 
+    private $service_place_manager;
+
     /**
      * @required
      */
-    public function setDependencies(Paginator $paginator, CmsManager $admin_service_cms_manager, CmsTypeManager $cms_type_manager, CmsManager $cms_manager)
+    public function setDependencies(
+        Paginator $paginator,
+        CmsManager $admin_service_cms_manager,
+        CmsTypeManager $cms_type_manager,
+        CmsManager $cms_manager,
+        CmsPlaceManager $service_place_manager)
     {
         $this->paginator = $paginator;
         $this->admin_service_cms_manager = $admin_service_cms_manager;
         $this->cms_type_manager = $cms_type_manager;
         $this->cms_manager = $cms_manager;
+        $this->service_place_manager = $service_place_manager;
     }
 
     /**
@@ -74,7 +83,7 @@ class CmsPageController extends Controller
     {
         $response = $this->traitIndexAction($request);
 
-        return $this->render('@NfqCmsPage/Admin/CmsPage/index.html.twig',$response + [
+        return $this->render('@NfqCmsPage/Admin/CmsPage/index.html.twig', $response + [
                 'contentTypes' => $this->getTypeManager()->getTypes()
             ]);
     }
@@ -123,12 +132,13 @@ class CmsPageController extends Controller
      * @Template()
      *
      * @param Request $request
-     * @return array
+     * @return Response
      */
     public function updateAction(Request $request, $id)
     {
         $this->setAdapter($request);
-        return $this->traitUpdateAction($request, $id);
+        return $this->render('@NfqCmsPage/Admin/CmsPage/update.html.twig',
+            $this->traitUpdateAction($request, $id));
     }
 
     /**
@@ -288,6 +298,6 @@ class CmsPageController extends Controller
      */
     private function getPlaceManager()
     {
-        return $this->get('nfq_cmspage.service.place_manager');
+        return $this->service_place_manager;
     }
 }

@@ -56,8 +56,12 @@ services:
             - [setAuthChecker, [ '@security.authorization_checker' ]]
         public: true
 
+    #Alias for nfq_cmspage.service.place_manager
+    Nfq\CmsPageBundle\Service\CmsPlaceManager: '@nfq_cmspage.service.place_manager'
+
     nfq_cmspage.service.place_manager:
         class: Nfq\CmsPageBundle\Service\CmsPlaceManager
+        autowire: true
         arguments: [ '@doctrine.orm.entity_manager', '@translator' ]
         calls:
             - [setPlaces, [ '%nfq_cmspage.places%' ]]
