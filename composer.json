@@ -23,13 +23,14 @@
         "doctrine/doctrine-bundle": "2.0.x-dev",
 
         "gedmo/doctrine-extensions": "2.4.*",
-        "stfalcon/tinymce-bundle": "dev-persomatch",
+        "stfalcon/tinymce-bundle": "dev-persomatch as 2.5.0-dev",
 
         "nfq-rho/admin-bundle": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "~5.0"
     },
+    "minimum-stability": "dev",
     "suggest": {
         "nfq-rho/filemanager-bundle": "Adds file manager extension for tineMCE editor and allows to add media to CMS pages"
     },
