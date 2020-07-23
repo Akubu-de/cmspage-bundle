@@ -26,10 +26,9 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('nfq_cms_page');
+        $treeBuilder = new TreeBuilder('nfq_cms_page');
 
-        $rootNode
+        $treeBuilder->getRootNode()
             ->children()
                 ->scalarNode('upload_dir')
                     ->isRequired()
