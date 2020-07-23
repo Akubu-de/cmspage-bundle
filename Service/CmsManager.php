@@ -284,7 +284,8 @@ class CmsManager
         try {
             //Add isActive restriction for all other user than admin
             if (!$this->authChecker instanceof AuthorizationCheckerInterface
-                || !$this->authChecker->isGranted(['ROLE_SUPER_ADMIN', 'ROLE_ADMIN'])
+                || !$this->authChecker->isGranted('ROLE_SUPER_ADMIN')
+                || !$this->authChecker->isGranted('ROLE_ADMIN')
             ) {
                 $criteria['cms.isActive'] = true;
             }
