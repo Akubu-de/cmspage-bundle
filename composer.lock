@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "203a981a0f7b7f2625c37873c19ea262",
+    "content-hash": "ce6adf2b58e8049c61431d7209c830cc",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -4390,14 +4390,7 @@
             "time": "2020-07-08T17:02:28+00:00"
         }
     ],
-    "aliases": [
-        {
-            "alias": "2.5.0-dev",
-            "alias_normalized": "2.5.0.0-dev",
-            "version": "dev-persomatch",
-            "package": "stfalcon/tinymce-bundle"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "symfony/symfony": 20,

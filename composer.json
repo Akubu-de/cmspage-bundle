@@ -23,7 +23,7 @@
         "doctrine/doctrine-bundle": "2.0.x-dev",
 
         "gedmo/doctrine-extensions": "2.4.*",
-        "stfalcon/tinymce-bundle": "dev-persomatch as 2.5.0-dev",
+        "stfalcon/tinymce-bundle": "dev-persomatch",
 
         "nfq-rho/admin-bundle": "dev-master"
     },
