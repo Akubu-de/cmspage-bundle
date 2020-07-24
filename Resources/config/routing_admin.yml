@@ -3,24 +3,24 @@
 nfq_cmspage_list:
     path: /
     methods: [ GET ]
-    defaults: { _controller: NfqCmsPageBundle:Admin/CmsPage:index }
+    defaults: { _controller: "Nfq\CmsPageBundle\Controller\Admin\CmsPageController::indexAction }
 
 nfq_cmspage_new:
     path: /new
     methods: [ GET ]
-    defaults: { _controller: NfqCmsPageBundle:Admin/CmsPage:new }
+    defaults: { _controller: Nfq\CmsPageBundle\Controller\Admin\CmsPageController::newAction }
 
 nfq_cmspage_create:
     path: /new
     methods: [ POST ]
-    defaults: { _controller: NfqCmsPageBundle:Admin/CmsPage:create }
+    defaults: { _controller: Nfq\CmsPageBundle\Controller\Admin\CmsPageController::createAction }
 
 nfq_cmspage_update:
     path: /{id}/update
     methods: [ GET, POST ]
-    defaults: { _controller: NfqCmsPageBundle:Admin/CmsPage:update }
+    defaults: { _controller: Nfq\CmsPageBundle\Controller\Admin\CmsPageController::updateAction }
 
 nfq_cmspage_delete:
     path: /{id}/delete
     methods: [ GET, POST ]
-    defaults: { _controller: NfqCmsPageBundle:Admin/CmsPage:delete }
+    defaults: { _controller: Nfq\CmsPageBundle\Controller\Admin\CmsPageController::deleteAction }
