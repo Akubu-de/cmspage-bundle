@@ -3,7 +3,7 @@
 nfq_cmspage_list:
     path: /
     methods: [ GET ]
-    defaults: { _controller: "Nfq\CmsPageBundle\Controller\Admin\CmsPageController::indexAction }
+    defaults: { _controller: Nfq\CmsPageBundle\Controller\Admin\CmsPageController::indexAction }
 
 nfq_cmspage_new:
     path: /new
