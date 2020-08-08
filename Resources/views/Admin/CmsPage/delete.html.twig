@@ -4,11 +4,13 @@
 
 {% form_theme delete_form 'NfqAdminBundle::form.html.twig' %}
 
-{% if app.request.query.get('isModal') %}
-    {% block title %}
+{% block title %}
+    {% if app.request.query.get('isModal') %}
+
         {{ entity.name }} - {{ 'cmspage.cmspage_remove'|trans }}
-    {% endblock %}
-{% endif %}
+
+    {% endif %}
+{% endblock %}
 
 {% block content %}
     <div class="row">
