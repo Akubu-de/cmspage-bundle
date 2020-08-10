@@ -1,8 +1,8 @@
-meta.template.cmspage.page_title: %title% - %site_name%
-meta.template.cmspage.page_description: %description% - %site_name%
+meta.template.cmspage.page_title: '%title% - %site_name%'
+meta.template.cmspage.page_description: '%description% - %site_name%'
 
 cmspage.cmspage_edit: Edit
-cmspage.cmspage_new: New %cms_type%
+cmspage.cmspage_new: 'New %cms_type%'
 cmspage.cmspage_code:  Code
 cmspage.cmspage_active: Active
 cmspage.cmspage_remove: Delete

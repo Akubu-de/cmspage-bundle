@@ -1,8 +1,8 @@
-meta.template.cmspage.page_title: %title% - %site_name%
+meta.template.cmspage.page_title: '%title% - %site_name%'
 meta.template.cmspage.page_description: %description% - %site_name%
 
 cmspage.cmspage_edit: Redaguoti
-cmspage.cmspage_new: Naujas %cms_type%
+cmspage.cmspage_new: 'Naujas %cms_type%'
 cmspage.cmspage_code: Kodas
 cmspage.cmspage_active: Aktyvus
 cmspage.cmspage_remove: Ištrinti
