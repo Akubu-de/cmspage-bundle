@@ -35,7 +35,7 @@ class CmsPageController extends AbstractController
     /**
      * @var string
      */
-    protected $defaultTemplate = 'NfqCmsPageBundle:CmsPage:view.html.twig';
+    protected $defaultTemplate = '@NfqCmsPage/CmsPage/view.html.twig';
 
     /**
      * @param Request $request
