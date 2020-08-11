@@ -105,7 +105,7 @@ class CmsPageController extends Controller
     public function newAction(Request $request)
     {
         $this->setAdapter($request);
-        return $this->traitNewAction($request);
+        return $this->render('@NfqCmsPage/Admin/CmsPage/new.html.twig', $this->traitNewAction($request));
     }
 
     /**
@@ -125,7 +125,7 @@ class CmsPageController extends Controller
     public function createAction(Request $request)
     {
         $this->setAdapter($request);
-        return $this->traitCreateAction($request);
+        return $this->render('@NfqCmsPage/Admin/CmsPage/new.html.twig', $this->traitCreateAction($request));
     }
 
     /**
