@@ -1,8 +1,8 @@
 {% set main_menu = 'cmspages' %}
 
-{% extends app.request.query.get('isModal')|default(false) ? "NfqAdminBundle::modal.html.twig" : "NfqAdminBundle::layout.html.twig" %}
+{% extends app.request.query.get('isModal')|default(false) ? "@NfqAdmin/modal.html.twig" : "@NfqAdmin/layout.html.twig" %}
 
-{% form_theme delete_form 'NfqAdminBundle::form.html.twig' %}
+{% form_theme delete_form '@NfqAdmin/form.html.twig' %}
 
 {% block title %}
     {% if app.request.query.get('isModal') %}

@@ -1,6 +1,6 @@
 {% set main_menu = 'cmspages' %}
 {% set width = '70%' %}
-{% extends app.request.query.get('isModal')|default(false) ? "NfqAdminBundle::modal.html.twig" : "NfqAdminBundle::layout.html.twig" %}
+{% extends app.request.query.get('isModal')|default(false) ? "@NfqAdmin/modal.html.twig" : "@NfqAdmin/layout.html.twig" %}
 
 {% block title %}
     {% set cmsType = ('cmspage.labels.adapter_' ~ app.request.query.get('_type'))|trans %}
@@ -18,7 +18,7 @@
             </ul>
             <br />
             <div class="tab-content">
-                {% embed 'NfqCmsPageBundle:Admin/CmsPage:_form.htm.twig' %}{% endembed %}
+                {% embed '@NfqCmsPage/Admin/CmsPage/_form.htm.twig' %}{% endembed %}
             </div>
         </div>
     </div>
