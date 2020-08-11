@@ -10,7 +10,7 @@
     {% endif %}
 
     <div class="tab-pane {% if isActiveLocale(_context, locale) %}active{% endif %}" id="{{ locale }}-tab">
-        {% embed 'NfqAdminBundle:_form:_form_theme.html.twig' %}{% endembed %}
+        {% embed '@NfqAdmin/_form/_form_theme.html.twig' %}{% endembed %}
         {{ form_start(form) }}
         <div class="row">
             <div class="col-lg-8">
@@ -29,7 +29,7 @@
 
                             <div id="main-information-{{ locale }}" class="panel-collapse in">
                                 <div class="panel-body">
-                                    {% include 'NfqCmsPageBundle:Admin/CmsPage/_blocks:main.html.twig' %}
+                                    {% include '@NfqCmsPage/Admin/CmsPage/_blocks/main.html.twig' %}
                                 </div>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
             </div>
             <div class="col-lg-4">
                 {% block featured_image %}
-                    {% include 'NfqCmsPageBundle:Admin/CmsPage/_blocks:featured_image.html.twig' %}
+                    {% include '@NfqCmsPage/Admin/CmsPage/_blocks/featured_image.html.twig' %}
                 {% endblock %}
             </div>
         </div>
@@ -67,19 +67,19 @@
         <br />
 
         {% if form.text_mce is defined %}
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="form-group">
-                    {{ form_widget(form.text_mce) }}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        {{ form_widget(form.text_mce) }}
+                    </div>
                 </div>
             </div>
-        </div>
         {% endif %}
 
-        {% include 'NfqAdminBundle:_form:_form_submit.html.twig' with {'form': form} %}
+        {% include '@NfqAdmin/_form/_form_submit.html.twig' with {'form': form} %}
 
         {{ form_end(form) }}
 
-        {% include 'NfqAdminBundle:_form:_form_delete.html.twig' %}
+        {% include '@NfqAdmin/_form/_form_delete.html.twig' %}
     </div>
 {% endfor %}

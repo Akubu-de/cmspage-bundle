@@ -21,7 +21,7 @@ use Nfq\CmsPageBundle\Service\Admin\CmsManager;
 use Nfq\CmsPageBundle\Service\Adapters\CmsPageAdapterInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Nfq\AdminBundle\Paginator\Paginator;
 use Symfony\Component\HttpFoundation\Response;
@@ -31,7 +31,7 @@ use Nfq\CmsPageBundle\Service\CmsPlaceManager;
  * Class CmsPageController
  * @package Nfq\CmsPageBundle\Controller\Admin
  */
-class CmsPageController extends AbstractController
+class CmsPageController extends Controller
 {
 
     private $admin_service_cms_manager;
