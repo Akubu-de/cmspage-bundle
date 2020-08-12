@@ -38,7 +38,6 @@ class CmsPageController extends Controller
     private $cms_type_manager;
     private $cms_manager;
 
-
     use TranslatableCRUDController {
         newAction as traitNewAction;
         createAction as traitCreateAction;
@@ -100,7 +99,7 @@ class CmsPageController extends Controller
      * @Template()
      *
      * @param Request $request
-     * @return array
+     * @return Response
      */
     public function newAction(Request $request)
     {
@@ -120,7 +119,7 @@ class CmsPageController extends Controller
      * @Template()
      *
      * @param Request $request
-     * @return array
+     * @return Response
      */
     public function createAction(Request $request)
     {
