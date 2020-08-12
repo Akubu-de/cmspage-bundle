@@ -136,8 +136,14 @@ class CmsPageController extends Controller
     public function updateAction(Request $request, $id)
     {
         $this->setAdapter($request);
-        return $this->render('@NfqCmsPage/Admin/CmsPage/update.html.twig',
-            $this->traitUpdateAction($request, $id));
+
+        $res = $this->traitUpdateAction($request, $id);
+
+        if ($res instanceof Response) {
+            return $res;
+        }
+
+        return $this->render('@NfqCmsPage/Admin/CmsPage/update.html.twig', $res);
     }
 
     /**
