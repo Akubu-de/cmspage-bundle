@@ -62,6 +62,7 @@ services:
     nfq_cmspage.service.place_manager:
         class: Nfq\CmsPageBundle\Service\CmsPlaceManager
         autowire: true
+        public: true
         arguments: [ '@doctrine.orm.entity_manager', '@translator' ]
         calls:
             - [setPlaces, [ '%nfq_cmspage.places%' ]]
